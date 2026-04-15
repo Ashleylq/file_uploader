@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=action%> Folder</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>File Uploader</h1>
+    <form class="form" action="<%=link%>" method="POST">
+        <div class="table">
+            <div>
+                <label for="name">Name: </label>
+                <input name="name" id="name" required value="<%if(folder){%><%=folder.name%><%}%>">
+            </div>
+        </div>
+        <button type="submit" class="form-b"><%=action%></button>
+    </form>
+    <a href="/"><button class="form-b">Back</button></a>
+</body>
+</html>

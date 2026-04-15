@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Folders</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>File Uploader</h1>
+    <% folders.map((folder) => { %>
+         <a href="/folder/<%=folder.id%>"><div class="folder"><%=folder.name%></div></a>
+    <% }) %>
+    <a href="/logout"><button class="form-b">Logout</button></a>
+    <a href="/folder/create"><button class="form-b">Create</button></a>
+</body>
+</html>

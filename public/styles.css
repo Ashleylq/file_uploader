@@ -7,7 +7,7 @@ body {
     background-color : #a9def9
 }
 
-form {
+.form {
     margin : 15px auto;
     width : max-content;
     padding : 10px;
@@ -57,5 +57,19 @@ a {
     text-align: center;
     padding : 5px;
     margin-top : 10px;
+    border-radius : 10px;
+}
+
+.folder {
+    color : black;
+    display : inline-block;
+    padding : 10px;
+    font-weight : bold;
+    background-color : #d0f4de;
+    margin : 15px;
+    width : max-content;
+    text-align: center;
+    height : 5rem;
+    line-height: 5rem;
     border-radius : 10px;
 }

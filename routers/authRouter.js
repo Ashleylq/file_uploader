@@ -1,11 +1,17 @@
 import { Router } from "express";
 import { renderLogin, renderSignUp, validateAndCreateUser } from "../controllers/auth.js";
 import passport from "passport";
+import { renderFolders } from "../controllers/folder.js";
 
 const authRouter = Router();
 
-authRouter.get('/', (req, res) => {
-    renderLogin(req, res);
+authRouter.get('/', async (req, res) => {
+    if(!req.isAuthenticated()){
+        renderLogin(req, res);
+    }
+    else {
+        await renderFolders(req, res);
+    }
 })
 
 authRouter.get('/signup', (req, res) => {
@@ -33,4 +39,4 @@ authRouter.get('/logout', (req, res) => {
     res.redirect('/');
 })
 
-export { authRouter };
+export default authRouter ;
