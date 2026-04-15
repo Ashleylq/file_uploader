@@ -1,11 +1,13 @@
 import express from "express";
 import session from "express-session";
 import path from "node:path";
-import passportConfig from "./util/passportConfig";
+import passportConfig from "./util/passportConfig.js";
 import passport from "passport";
-import { prisma } from "./lib/prisma";
+import { prisma } from "./lib/prisma.js";
 import { PrismaSessionStore } from "@quixo3/prisma-session-store";
 import "dotenv/config";
+import { authRouter } from "./routers/authRouter.js";
+const __dirname = import.meta.dirname 
 
 const app = express();
 
@@ -33,7 +35,9 @@ app.use((req, res, next) => {
     res.locals.user = req.user;
     next();
 })
+app.use(express.static(path.join(__dirname, "public")))
 
+app.use('/', authRouter)
 
 app.listen(3000, (err) => {
     if(err){

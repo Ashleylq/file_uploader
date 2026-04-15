@@ -1,5 +1,5 @@
 import { Strategy } from "passport-local";
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import bcrypt from "bcryptjs";
 
 export default (passport) => {

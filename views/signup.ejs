@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>File Uploader</h1>
+    <form action="/signup" method="POST">
+        <div class="table">
+            <div>
+                <label for="username">Username: </label>
+                <input name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <label for="confirmpassword">Confirm Password: </label>
+                <input name="confirmpassword" id="confirmpassword" type="password" required>
+            </div>
+        </div>
+        <button type="submit" class="form-b">Sign Up</button>
+        <% if(errors){ %>
+            <div class="error"><%=errors[0].msg%></div>
+        <% } %>
+    </form>
+</body>
+</html>

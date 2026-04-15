@@ -1,0 +1,56 @@
+* {
+    font-family : Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin : 0;
+    background-color : #a9def9
+}
+
+form {
+    margin : 15px auto;
+    width : max-content;
+    padding : 10px;
+    border-radius : 10px;
+    background-color : #d0f4de;
+}
+
+h1 {
+    text-align : center;
+    margin : 10px;
+}
+
+.table {
+    display : table;
+    border-spacing: 10px;
+}
+
+.table > div {
+    display : table-row;
+}
+
+input, label {
+    display : table-cell;
+}
+
+input {
+    font-size : 0.8rem;
+    height : 1rem;
+}
+
+.form-b {
+    display : block;
+    margin : 10px auto;
+    border : none;
+    padding : 10px;
+    font-size : 1rem;
+    background-color : #ff99c8
+}
+
+.error {
+    background-color : #fcf6bd;
+    text-align: center;
+    padding : 5px;
+    margin-top : 10px;
+    border-radius : 10px;
+}
