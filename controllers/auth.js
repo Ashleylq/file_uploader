@@ -35,16 +35,34 @@ async (req, res) => {
     }
     const { username , password } = matchedData(req);
     const hashedPass = await bcrypt.hash(password, 10);
-    await prisma.user.create({
+    const user = await prisma.user.create({
         data : {
             password : hashedPass,
             username : username
         }
     })
-    res.redirect('/');
+    req.login(user, (err) => {
+        if(err){
+            return next(err);
+        }
+        else {
+            res.redirect('/');
+        }
+    })
 }]
+
+function renderLogin(req, res){
+    if(req.session.messages){
+        res.render("login", {errors : req.session.messages});
+        req.session.messages = [];
+    }
+    else {
+        res.render('login', {errors : null});
+    }
+}
 
 export {
     renderSignUp,
-    validateAndCreateUser
+    validateAndCreateUser,
+    renderLogin
 }

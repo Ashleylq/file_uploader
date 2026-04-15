@@ -38,13 +38,18 @@ input {
     height : 1rem;
 }
 
+a {
+    text-decoration : none;
+}
+
 .form-b {
     display : block;
     margin : 10px auto;
     border : none;
     padding : 10px;
     font-size : 1rem;
-    background-color : #ff99c8
+    background-color : #ff99c8;
+    color : white;
 }
 
 .error {
