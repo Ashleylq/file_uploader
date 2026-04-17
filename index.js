@@ -8,7 +8,7 @@ import { PrismaSessionStore } from "@quixo3/prisma-session-store";
 import "dotenv/config";
 import authRouter from "./routers/authRouter.js";
 import folderRouter from "./routers/folderRouter.js";
-const __dirname = import.meta.dirname 
+const __dirname = import.meta.dirname ;
 
 const app = express();
 
@@ -31,15 +31,15 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.urlencoded({extended : false}))
+app.use(express.urlencoded({extended : false}));
 app.use((req, res, next) => {
     res.locals.user = req.user;
     next();
 })
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/', authRouter)
-app.use('/folder', folderRouter)
+app.use('/', authRouter);
+app.use('/folder', folderRouter);
 
 app.listen(3000, (err) => {
     if(err){

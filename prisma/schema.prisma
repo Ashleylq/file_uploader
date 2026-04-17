@@ -30,6 +30,7 @@ model Folder {
 model File {
   id         Int      @id @default(autoincrement())
   name       String
+  public_id  String
   size       Float
   type       String
   uploadDate DateTime @default(now())

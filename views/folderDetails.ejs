@@ -9,10 +9,11 @@
 <body>
     <h1>File Uploader</h1>
     <% folder.files.map((file) => { %>
-        <div class="file"><%=file.name%></div>
+        <a href="/folder/<%=folder.id%>/file/<%=file.id%>"><div class="file"><%=file.name%></div></a>
     <% }) %>
-    <a href="/folder/edit/<%=folder.id%>"><button class="form-b">Edit</button></a>
-    <form action="/folder/delete/<%=folder.id%>" method="POST"><button class="form-b">Delete</button></form>
-    <a href="/"><button class="form-b">Back</button></a>
+    <a href="/folder/edit/<%=folder.id%>"><button>Edit</button></a>
+    <form action="/folder/delete/<%=folder.id%>" method="POST"><button>Delete</button></form>
+    <a href="/folder/<%=folder.id%>/file/upload"><button>Upload</button></a>
+    <a href="/"><button>Back</button></a>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=file.name%></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>File Uploader</h1>
+    <div class="details">
+        <p>File Name: <%=file.name%></p>
+        <p>File Type: <%=file.type%></p>
+        <p>File Size: <%=String(Math.ceil((file.size / (1024 * 1024) * 100) / 100)) + "MB"%></p>
+        <p>Time of Upload: <%=file.uploadDate.toLocaleString(undefined, {weekday : "long", month : "long", day : "numeric", year : "numeric", hour : "numeric", minute : "numeric"})%></p>
+        <p>Folder: <%=file.folder.name%></p>
+        <a href="<%=view%>" target="_blank"><button>View File</button></a>
+        <a href="<%=download%>" download><button>Download File</button></a>
+    </div>
+    <a href="/folder/<%=file.folder.id%>"><button>Back</button></a>
+</body>
+</html>

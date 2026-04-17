@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { renderFolders, renderCreateFolder, createFolder, renderFolderDetails, deleteFolder, renderEditFolder, editFolder } from "../controllers/folder.js";
+import fileRouter from "./fileRouter.js";
 
 const folderRouter = Router();
 
@@ -36,5 +37,7 @@ folderRouter.get('/edit/:id', async (req, res) => {
 folderRouter.post('/edit/:id', async (req, res) => {
     await editFolder(req, res);
 })
+
+folderRouter.use('/:folderid/file', fileRouter);
 
 export default folderRouter;
